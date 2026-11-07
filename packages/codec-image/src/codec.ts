@@ -246,6 +246,9 @@ export class ImageCodec extends codecV2.BaseCodec<ImageRequest, ImageArtifact> {
   ];
 
   readonly warnings = {
+    // Reserved under Brief H's superset-declaration pattern: palette entries are
+    // currently recorded in quality.structural without an upper bound, so nothing
+    // emits this ID until a consumer introduces a palette ceiling.
     palette_overflow: "image/palette-overflow",
     provider_latents_invalid: "image/provider-latents-invalid",
     coarse_vq_invalid: "image/coarse-vq-invalid",
